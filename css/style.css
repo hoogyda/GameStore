@@ -39,7 +39,7 @@ body{
 
 /* Контейнер */
 html{
-    font-size: 100%;
+    font-size: 0.8333333333333333vw;
 }
 [class*="__container"] {
     max-width: 110.938rem;
@@ -47,6 +47,7 @@ html{
 }
 /* Контейнер */
 
+/* 42.6 57.4 */
 
 
 main{
@@ -56,8 +57,6 @@ main{
 body{
     font-family: 'Manrope', sans-serif;
     background-color: #15181D;
-
-    
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -76,8 +75,12 @@ body{
 .header__logo{
     margin-right: 1.1rem;
 }
+.header__logo img{
+    width: 3rem;
+}
 .header__title {    
     color: #fff;
+    
     width: 4rem;
     line-height: 1.375rem;
     font-weight: 800;
@@ -90,6 +93,7 @@ padding: 1rem;
 color: rgba(255, 255, 255, 0.2);
 width: 16.563rem;
 flex: 0 1 16.563rem;
+size-adjust: .875rem;
 }
 nav{
     flex: 1 1 auto;
@@ -110,33 +114,70 @@ header a{
 .header__item-white{
     color: #ECEFF4;
 }
-.header__profile {
+.header__profile img {
     margin-right: 1rem;
+    width: 3.5rem;
 }
+
 .header__logout{
-    padding: 1rem 1rem 1rem 3rem;
-    border: 0.5px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    position: relative;
+        padding: 1rem 1rem 1rem 1rem;
+    border: 0.03125rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.3125rem;
 }
-.header__logout::before{
-    position: absolute;
-    content: '';
-    background: url("../img/logout.svg") no-repeat;
+.header__logout img{
     width: 1.5rem;
-    height: 1.5rem;
-    left: 1rem;
-    top: .75rem;
 }
+.header__logout span{
+    padding-top: 1.25rem;
+}
+
+.burger-menu{
+    display: none;
+    position: relative;
+    margin-left: auto;
+    height: 2.5rem;
+    width: 4.35rem;
+}
+
+.burger-menu-item{
+    display: block;
+    width: 100%;
+    height: .3rem;
+    background-color: #45484D;
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+}
+
+.burger-menu-item-first{
+    top: 0;
+}
+.burger-menu-item-second{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.burger-menu-item-third{
+    bottom: 0;
+}
+
+
+
 /* ===================================== */
+/* 42.6 57.4 */
+
 .game-info {
+
+}
+.game-info__container{
     display: flex;
     margin-top: 4.25rem;
 }
-.game-info__textBox {
-    flex:1 1 auto;
-    padding-top: 1.25rem;
 
+
+.game-info__textBox {
+    flex:1 1 47.3125rem;
+    padding-top: 1.25rem;
+    margin-right: 10.25rem;
 }
 .game-info__nav{
     color: rgba(236, 239, 244, 0.4);
@@ -151,9 +192,12 @@ header a{
     color: #ECEFF4;
     padding-bottom: 2.25rem;
 }
+.type-device{
+    max-height: 3rem;
+}
 .type-device:not(last-child){
-    padding-right: 1.75rem;
-    padding-bottom: 1.375rem;
+    margin-right: 1.75rem;
+    margin-bottom: 1.375rem;
 }
 
 .game-info__textBox p{
@@ -175,6 +219,9 @@ header a{
 .first-price{
     padding-top: 1rem;
     margin-bottom:2.625rem;
+    width: 10rem;
+}
+.first-price img{
 
 }
 
@@ -188,7 +235,7 @@ header a{
 }
 .cart{
     padding: 1rem 1rem 1rem 2.6rem;
-    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    border: 0.03125rem solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     background:none;
     position: relative;
@@ -208,15 +255,18 @@ header a{
 
 
 
-
+.game-info__creenshots {
+}
 .game-info__main-screen {
     border-radius: .5rem;
-    max-height: 35.8rem;
+    width: 100%;
 }
 
 .game-info__slider{
     margin: 3.81rem 3.5rem  0 3.5rem;
     position: relative;
+    display: flex;
+    gap: 6rem; ;
 }
 .game-info__slider::before{
     position: absolute;
@@ -235,10 +285,9 @@ header a{
     width: 1rem;height: 1rem;
 }
 
-.game-info__slider img:not(last-child){
-    padding-right:6rem ;
+.game-info__slider img {
+    width: 14.75rem;
 }
-/* 42.6 57.4 */
 
 
 /* ========================= */
@@ -270,6 +319,7 @@ header a{
 .game-card {
     position: relative;
     margin-bottom: 2.563rem;
+    width: 53.75rem;
 }
 
 
@@ -283,10 +333,12 @@ header a{
     flex-direction: column;
     text-align: end;
     backdrop-filter: blur(2rem);
-    z-index: 11;
-border-top-left-radius: 5rem;
+    z-index: 11;   
+    border-top-left-radius: 5rem;
 }
-
+.game-card img{
+    width: 100%;
+}
 .game-card__title {
     font-size: 3rem;
     font-weight: 700;
@@ -315,4 +367,64 @@ border-top-left-radius: 5rem;
 .footer__container a{
     color: #FFFFFF;
     text-decoration: underline;
+}
+
+@media (max-width: 768px){
+    html{
+    font-size: 2.08333325vw;
+    }
+    [class*="__container"] {
+        max-width: 44.3752rem;
+    }
+    nav{
+        display: none;
+    }
+    .header__profile{
+        display: none;
+
+    }
+
+    .header__logout{
+        display: none;
+    }
+    .burger-menu{
+        display: block;
+    }
+    .game-info__container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .game-info__textBox{
+        flex: 1 1 auto;
+    margin-bottom: 2.2rem;  
+    padding-top: 2.125rem; 
+    margin-right: 0;
+    }
+    .game-info__slider{
+        margin: 3.81rem 1rem  0 1rem;
+    }
+    .game-info__slider img {
+        width: 9.75rem;
+    }
+    .game-info__slider::before{
+        position: absolute;
+        content: '';
+        left: -2rem;
+        top: 50%;
+        background: url("../img/scroll-left.svg") no-repeat;
+        width: 1rem;height: 1rem;
+    }
+    .game-info__slider::after{
+        position: absolute;
+        content: '';
+        right: -2rem;
+        top: 50%;
+        background: url("../img/scroll-right.svg") no-repeat;
+        width: 1rem;height: 1rem;
+    }
+    .game-info__main-screen{
+        width: 768px;
+        transform: translateX(-4.5%);
+    }
 }
